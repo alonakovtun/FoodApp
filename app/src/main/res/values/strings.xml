@@ -26,4 +26,7 @@
     <string name="my_cart">My Cart</string>
     <string name="user_name">User Name</string>
     <string name="user_user_com">user@user.com</string>
+    <string name="_10_00_23_00">10:00 - 23:00</string>
+    <string name="product_name">Product Name</string>
+    <string name="_5_0">5.0</string>
 </resources>

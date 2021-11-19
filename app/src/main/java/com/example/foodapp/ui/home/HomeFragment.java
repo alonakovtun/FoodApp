@@ -16,24 +16,33 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.foodapp.R;
 import com.example.foodapp.adapters.HomeHorAdapter;
+import com.example.foodapp.adapters.HomeVerAdapter;
 import com.example.foodapp.databinding.FragmentHomeBinding;
 import com.example.foodapp.models.HomeHorModel;
+import com.example.foodapp.models.HomeVerModel;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class HomeFragment extends Fragment {
 
-    RecyclerView homeHorizontalRec;
+    RecyclerView homeHorizontalRec, homeVerticalRec;
     List<HomeHorModel> homeHorModelList;
     HomeHorAdapter homeHorAdapter;
+
+    ///////////////////Vertical//////////////////////////
+    List<HomeVerModel> homeVerModelList;
+    HomeVerAdapter homeVerAdapter;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_home, container, false);
 
         homeHorizontalRec = root.findViewById(R.id.home_hor_rec);
+        homeVerticalRec = root.findViewById(R.id.home_ver_rec);
 
+
+        ////////////////////HORIZONTAL RECYCLING VIEW
         homeHorModelList = new ArrayList<>();
 
         homeHorModelList.add(new HomeHorModel(R.drawable.pizza, "Pizza"));
@@ -48,7 +57,19 @@ public class HomeFragment extends Fragment {
         homeHorizontalRec.setHasFixedSize(true);
         homeHorizontalRec.setNestedScrollingEnabled(false);
 
+        ////////////////////VERTICAL RECYCLING VIEW
 
+        homeVerModelList = new ArrayList<>();
+
+        homeVerModelList.add(new HomeVerModel(R.drawable.pizza1, "Pizza", "10:00 - 23:00", "4.9", "Min - $35"));
+        homeVerModelList.add(new HomeVerModel(R.drawable.pizza2, "Pizza", "10:00 - 23:00", "4.9", "Min - $35"));
+        homeVerModelList.add(new HomeVerModel(R.drawable.pizza3, "Pizza", "10:00 - 23:00", "4.9", "Min - $35"));
+
+        homeVerAdapter = new HomeVerAdapter(getActivity(), homeVerModelList);
+        homeVerticalRec.setAdapter(homeVerAdapter);
+        homeVerticalRec.setLayoutManager(new LinearLayoutManager(getActivity(), RecyclerView.VERTICAL, false));
+        homeVerticalRec.setHasFixedSize(true);
+        homeVerticalRec.setNestedScrollingEnabled(false);
 
         return root;
     }
