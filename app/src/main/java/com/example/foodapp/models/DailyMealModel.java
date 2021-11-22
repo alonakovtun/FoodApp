@@ -8,10 +8,11 @@ public class DailyMealModel {
     String type;
     String description;
 
-    public DailyMealModel(int image, String name, String description, String discount) {
+    public DailyMealModel(int image, String name, String discount, String type, String description) {
         this.image = image;
         this.name = name;
         this.discount = discount;
+        this.type = type;
         this.description = description;
     }
 

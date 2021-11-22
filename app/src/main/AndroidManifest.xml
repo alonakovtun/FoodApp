@@ -4,14 +4,16 @@
 
     <application
         android:allowBackup="true"
+        android:hardwareAccelerated="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:largeHeap="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.FoodApp"
-        android:largeHeap="true"
-        android:hardwareAccelerated="false">
-
+        android:theme="@style/Theme.FoodApp">
+        <activity
+            android:name=".activities.DetailedDailyMealActivity"
+            android:exported="false" />
         <activity
             android:name=".activities.RegistrationActivity"
             android:exported="false" />
@@ -20,9 +22,7 @@
             android:exported="false" />
         <activity
             android:name=".activities.WelcomeActivity"
-            android:exported="true" >
-
-        </activity>
+            android:exported="true"></activity>
         <activity
             android:name=".MainActivity"
             android:exported="true"
