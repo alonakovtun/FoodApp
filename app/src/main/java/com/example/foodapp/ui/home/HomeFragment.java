@@ -18,7 +18,6 @@ import com.example.foodapp.R;
 import com.example.foodapp.adapters.HomeHorAdapter;
 import com.example.foodapp.adapters.HomeVerAdapter;
 import com.example.foodapp.adapters.UpdateVerticalRec;
-import com.example.foodapp.databinding.FragmentHomeBinding;
 import com.example.foodapp.models.HomeHorModel;
 import com.example.foodapp.models.HomeVerModel;
 
