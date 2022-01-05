@@ -5,11 +5,9 @@
     android:layout_height="match_parent"
     tools:context=".fragment.ThirdFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/featured_ver_rec"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Third Fragment"
-        android:textSize="30sp"/>
+        android:layout_height="wrap_content" />
 
 </FrameLayout>

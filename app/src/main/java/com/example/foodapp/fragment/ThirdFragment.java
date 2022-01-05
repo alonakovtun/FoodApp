@@ -3,64 +3,50 @@ package com.example.foodapp.fragment;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.foodapp.R;
+import com.example.foodapp.adapters.FeaturedVerAdapter;
+import com.example.foodapp.models.FeaturedVerModel;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link ThirdFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+import java.util.ArrayList;
+import java.util.List;
+
 public class ThirdFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
+    List<FeaturedVerModel> featuredVerModelList;
+    RecyclerView recyclerView2;
+    FeaturedVerAdapter featuredVerAdapter;
     public ThirdFragment() {
         // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment ThirdFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static ThirdFragment newInstance(String param1, String param2) {
-        ThirdFragment fragment = new ThirdFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_third, container, false);
+        View view =  inflater.inflate(R.layout.fragment_first, container, false);
+
+        recyclerView2 = view.findViewById(R.id.featured_ver_rec);
+        recyclerView2.setLayoutManager(new LinearLayoutManager(getContext(), RecyclerView.VERTICAL, false));
+        featuredVerModelList = new ArrayList<>();
+
+        featuredVerModelList.add(new FeaturedVerModel(R.drawable.fav1, "New 1", "Description 1", "4.8", "10:00-17:00"));
+        featuredVerModelList.add(new FeaturedVerModel(R.drawable.coffee2, "New 2", "Description 2", "4.8", "10:00-17:00"));
+        featuredVerModelList.add(new FeaturedVerModel(R.drawable.fries3, "New 3", "Description 3", "4.8", "10:00-17:00"));
+        featuredVerModelList.add(new FeaturedVerModel(R.drawable.fav2, "New 5", "Description 5", "4.8", "10:00-17:00"));
+        featuredVerModelList.add(new FeaturedVerModel(R.drawable.breakfast, "New 6", "Description 6", "4.8", "10:00-17:00"));
+        featuredVerModelList.add(new FeaturedVerModel(R.drawable.fav3, "New 6", "Description 6", "4.8", "10:00-17:00"));
+        featuredVerModelList.add(new FeaturedVerModel(R.drawable.burger3, "New 6", "Description 6", "4.8", "10:00-17:00"));
+
+        featuredVerAdapter = new FeaturedVerAdapter(featuredVerModelList);
+        recyclerView2.setAdapter(featuredVerAdapter);
+
+        return view;
     }
 }
