@@ -44,7 +44,7 @@
 
     <EditText
         android:textColor="@color/white"
-        android:id="@+id/editText"
+        android:id="@+id/reg_name"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
@@ -60,23 +60,23 @@
 
     <EditText
         android:textColor="@color/white"
-        android:id="@+id/editText2"
+        android:id="@+id/reg_phone"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:backgroundTint="#CCCCCC"
-        android:drawableLeft="@drawable/ic_baseline_email_24"
+        android:drawableLeft="@drawable/ic_baseline_phone_24"
         android:drawablePadding="13dp"
-        android:hint="@string/email_address"
+        android:hint="Phone number"
         android:textColorHint="@color/white"
         android:layout_marginTop="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText"
+        app:layout_constraintTop_toBottomOf="@+id/reg_name"
         app:layout_constraintWidth_percent=".8" />
 
     <EditText
         android:textColor="@color/white"
-        android:id="@+id/editText3"
+        android:id="@+id/reg_password"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:backgroundTint="#CCCCCC"
@@ -87,11 +87,10 @@
         android:layout_marginTop="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText2"
+        app:layout_constraintTop_toBottomOf="@+id/reg_phone"
         app:layout_constraintWidth_percent=".8" />
 
     <Button
-        android:onClick="mainActivity"
         android:id="@+id/button"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -103,7 +102,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText3"
+        app:layout_constraintTop_toBottomOf="@+id/reg_password"
         app:layout_constraintWidth_percent=".8"
         app:layout_constraintVertical_bias=".4"/>
 
