@@ -38,7 +38,6 @@ public class DailyMealAdapter extends RecyclerView.Adapter<DailyMealAdapter.View
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.imageView.setImageResource(list.get(position).getImage());
         holder.name.setText(list.get(position).getName());
-        holder.discount.setText(list.get(position).getDiscount());
         holder.description.setText(list.get(position).getDescription());
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
@@ -59,7 +58,7 @@ public class DailyMealAdapter extends RecyclerView.Adapter<DailyMealAdapter.View
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         ImageView imageView;
-        TextView name, description, discount;
+        TextView name, description;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -67,7 +66,6 @@ public class DailyMealAdapter extends RecyclerView.Adapter<DailyMealAdapter.View
             imageView = itemView.findViewById(R.id.imageview);
             name = itemView.findViewById(R.id.textView9);
             description = itemView.findViewById(R.id.textView10);
-            discount = itemView.findViewById(R.id.discount);
 
         }
     }
